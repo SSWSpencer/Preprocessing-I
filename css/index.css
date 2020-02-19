@@ -1,1 +1,286 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  background: #EAEAEA;
+}
+h3 {
+  font-size: 1.5rem;
+  color: #1C3B4F;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  margin-bottom: 1.5%;
+}
+h4 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #323436;
+  font-family: 'Roboto Slab', serif;
+}
+h5 {
+  font-size: 1rem;
+  color: #323436;
+  font-family: 'Roboto Slab', serif;
+}
+p,
+li {
+  font-size: 1rem;
+  color: #6C7982;
+}
+li {
+  list-style-type: square;
+  list-style-position: inside;
+  font-style: italic;
+}
+header {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #EAEAEA;
+  margin: 2% auto;
+}
+header .top {
+  width: 100%;
+  text-align: center;
+  font-size: 6rem;
+  background: #1C3B4F;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  padding: 5% 0;
+}
+@media (max-width: 800px) {
+  header .top {
+    font-size: 3rem;
+    letter-spacing: 0.3rem;
+  }
+}
+header .mainTitle {
+  font-size: 2rem;
+  padding: 1.5rem 4rem;
+  background: #323436;
+  font-family: 'Roboto Slab', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-top: -2%;
+}
+@media (max-width: 800px) {
+  header .mainTitle {
+    font-size: 1.3rem;
+    padding: 0.15rem 0.4rem;
+  }
+}
+.midPage {
+  width: 80%;
+  margin: 5rem auto 2rem auto;
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.4rem;
+  padding-top: 2%;
+  border-bottom: 1rem solid #1C3B4F;
+  border-top: 1rem solid #1C3B4F;
+}
+.midPage .rightMidBox {
+  margin-bottom: 2%;
+}
+.midPage .leftSide {
+  width: 40%;
+}
+@media (max-width: 800px) {
+  .midPage .leftSide {
+    width: 100%;
+  }
+}
+.midPage .rightSide {
+  width: 45%;
+}
+@media (max-width: 800px) {
+  .midPage .rightSide {
+    width: 100%;
+  }
+}
+.midPage .midBox {
+  margin-bottom: 3%;
+}
+@media (max-width: 800px) {
+  .midPage .midBox {
+    margin-bottom: 10%;
+  }
+}
+@media (max-width: 800px) {
+  .midPage {
+    flex-direction: column;
+  }
+  .midPage .personalProfile,
+  .midPage .coreStrengths,
+  .midPage .workExperience {
+    padding-bottom: 2rem;
+    border-bottom: 0.1rem solid #1C3B4F;
+  }
+}
+.bottom {
+  width: 80%;
+  margin: 0 auto 5% auto;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.bottom p {
+  font-style: italic;
+  line-height: 1.4rem;
+}
+.bottom .techSkills {
+  width: 45%;
+}
+@media (max-width: 800px) {
+  .bottom .techSkills {
+    width: 100%;
+    padding-bottom: 2rem;
+    border-bottom: 0.1rem solid #1C3B4F;
+    margin-bottom: 2rem;
+  }
+}
+.bottom .contact {
+  width: 40%;
+}
+@media (max-width: 800px) {
+  .bottom .contact {
+    width: 100%;
+  }
+}
+@media (max-width: 800px) {
+  .bottom {
+    flex-direction: column;
+  }
+}
