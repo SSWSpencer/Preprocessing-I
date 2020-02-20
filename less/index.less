@@ -24,7 +24,24 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+/* HTML5 display-role reset for older browsers 
+
+
+
+
+
+
+******************************************************************************************************
+The readme calls for the @media max-width to be set to 500px. I originally did that, but the scaling down from ~800 to 500 was really bad looking. I changed all of the (max-width:500px)'s to 800px afterwards, making the "tablet view" the exact same as the "mobile view", but with a much better looking downscale. With the browser set to 500px, the webpage looks identical to when it was (max-width:500px) though.
+******************************************************************************************************
+
+
+
+
+
+
+
+*/
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -66,6 +83,16 @@ html, body {
 @lessDarkStuff: #6C7982;
 @reallyLightStuff: #EAEAEA;
 
+.setTextFont(){
+	color: @darkStuff;
+	font-family: @textFont;
+}
+
+.setColumn(){
+	display: flex;
+	flex-direction: column;
+}
+
 h3{
 	font-size: 1.5rem;
 	color: @mainColor;
@@ -76,13 +103,11 @@ h3{
 h4{
 	font-weight: bold;
 	font-size: 1.2rem;
-	color: @darkStuff;
-	font-family: @textFont;
+	.setTextFont();
 }
 h5{
 	font-size: 1rem;
-	color: @darkStuff;
-	font-family: @textFont;
+	.setTextFont();
 }
 p, li{
 	font-size: 1rem;
@@ -97,11 +122,10 @@ li{
 
 header{
 	width: 80%;
-	display: flex;
-	flex-direction: column;
+	.setColumn();
 	align-items: center;
 	color: @reallyLightStuff;
-	margin: 2% auto;
+	margin: 2% auto 1% auto;
 	.top{
 		width: 100%;
 		text-align: center;
@@ -111,30 +135,69 @@ header{
 		text-transform: uppercase;
 		letter-spacing: 1rem;
 		padding: 5% 0;
-		@media(max-width: 800px){
+		@media(max-width: 800px){ 	
 			font-size: 3rem;
 			letter-spacing: 0.3rem;
 		}
 	}
+
 	.mainTitle{
+		margin-top: -2%;
 		font-size: 2rem;
 		padding: 1.5rem 4rem;
 		background: @darkStuff;
 		font-family: @textFont;
 		text-transform: uppercase;
 		letter-spacing: 0.2rem;
-		margin-top: -2%;
 		@media(max-width: 800px){
 			font-size:1.3rem;
 			padding: 0.15rem 0.4rem;
 		}
 	}
+
+	nav{
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		padding-top: 2rem;
+		a{
+			.setTextFont();
+			border: 1px solid @mainColor;
+			padding: 1rem 2rem;
+			text-decoration: none;
+			background:#CACCCE;
+			&:hover{
+				background: #EAEAEA;
+			}
+		}
+		@media(max-width:800px){
+			text-align: center;
+		}
+
+	}
 }
 
+nav{
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	a{
+		.setTextFont();
+		border: 1px solid @mainColor;
+		padding: 1rem 2rem;
+		text-decoration: none;
+		background:#CACCCE;
+		&:hover{
+			background: #EAEAEA;
+		}
+	}
+}
 
 .midPage{
 	width: 80%;
-	margin: 5rem auto 2rem auto;
+	margin: 2rem auto 2rem auto;
 	display: flex;
 	justify-content: space-between;
 	line-height: 1.4rem;
@@ -163,8 +226,8 @@ header{
 		}
 	}
 	@media(max-width: 800px){
-		flex-direction: column;
-		.personalProfile, .coreStrengths, .workExperience{
+		.setColumn();
+		#personalProfile, #coreStrengths, #workExperience{
 			padding-bottom: 2rem;
 			border-bottom: 0.1rem solid @mainColor;
 		}
@@ -181,7 +244,7 @@ header{
 		font-style: italic;
 		line-height: 1.4rem;
 	}
-	.techSkills{
+	#techSkills{
 		width: 45%;
 		@media(max-width: 800px){
 			width: 100%;
@@ -190,13 +253,13 @@ header{
 			margin-bottom: 2rem;
 		}
 	}
-	.contact{
+	#contact{
 		width: 40%;
 		@media(max-width: 800px){
 			width: 100%;
 		}
 	}
 	@media(max-width: 800px){
-		flex-direction: column;
+		.setColumn();
 	}
 }

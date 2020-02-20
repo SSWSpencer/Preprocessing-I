@@ -89,7 +89,24 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+/* HTML5 display-role reset for older browsers 
+
+
+
+
+
+
+******************************************************************************************************
+The readme calls for the @media max-width to be set to 500px. I originally did that, but the scaling down from ~800 to 500 was really bad looking. I changed all of the (max-width:500px)'s to 800px afterwards, making the "tablet view" the exact same as the "mobile view", but with a much better looking downscale. With the browser set to 500px, the webpage looks identical to when it was (max-width:500px) though.
+******************************************************************************************************
+
+
+
+
+
+
+
+*/
 article,
 aside,
 details,
@@ -168,7 +185,7 @@ header {
   flex-direction: column;
   align-items: center;
   color: #EAEAEA;
-  margin: 2% auto;
+  margin: 2% auto 1% auto;
 }
 header .top {
   width: 100%;
@@ -187,13 +204,13 @@ header .top {
   }
 }
 header .mainTitle {
+  margin-top: -2%;
   font-size: 2rem;
   padding: 1.5rem 4rem;
   background: #323436;
   font-family: 'Roboto Slab', serif;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  margin-top: -2%;
 }
 @media (max-width: 800px) {
   header .mainTitle {
@@ -201,9 +218,49 @@ header .mainTitle {
     padding: 0.15rem 0.4rem;
   }
 }
+header nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 2rem;
+}
+header nav a {
+  color: #323436;
+  font-family: 'Roboto Slab', serif;
+  border: 1px solid #1C3B4F;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  background: #CACCCE;
+}
+header nav a:hover {
+  background: #EAEAEA;
+}
+@media (max-width: 800px) {
+  header nav {
+    text-align: center;
+  }
+}
+nav {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+nav a {
+  color: #323436;
+  font-family: 'Roboto Slab', serif;
+  border: 1px solid #1C3B4F;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  background: #CACCCE;
+}
+nav a:hover {
+  background: #EAEAEA;
+}
 .midPage {
   width: 80%;
-  margin: 5rem auto 2rem auto;
+  margin: 2rem auto 2rem auto;
   display: flex;
   justify-content: space-between;
   line-height: 1.4rem;
@@ -240,11 +297,12 @@ header .mainTitle {
 }
 @media (max-width: 800px) {
   .midPage {
+    display: flex;
     flex-direction: column;
   }
-  .midPage .personalProfile,
-  .midPage .coreStrengths,
-  .midPage .workExperience {
+  .midPage #personalProfile,
+  .midPage #coreStrengths,
+  .midPage #workExperience {
     padding-bottom: 2rem;
     border-bottom: 0.1rem solid #1C3B4F;
   }
@@ -260,27 +318,28 @@ header .mainTitle {
   font-style: italic;
   line-height: 1.4rem;
 }
-.bottom .techSkills {
+.bottom #techSkills {
   width: 45%;
 }
 @media (max-width: 800px) {
-  .bottom .techSkills {
+  .bottom #techSkills {
     width: 100%;
     padding-bottom: 2rem;
     border-bottom: 0.1rem solid #1C3B4F;
     margin-bottom: 2rem;
   }
 }
-.bottom .contact {
+.bottom #contact {
   width: 40%;
 }
 @media (max-width: 800px) {
-  .bottom .contact {
+  .bottom #contact {
     width: 100%;
   }
 }
 @media (max-width: 800px) {
   .bottom {
+    display: flex;
     flex-direction: column;
   }
 }
